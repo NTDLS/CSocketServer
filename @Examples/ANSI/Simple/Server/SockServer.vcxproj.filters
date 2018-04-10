@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{d2d91cf1-83e6-4536-817a-142da9bac5c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes &amp; Libraries">
+      <UniqueIdentifier>{e247b49d-138c-46b5-b72a-6d4d171fb788}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes &amp; Libraries\CSocketServer">
+      <UniqueIdentifier>{5bef0e3c-ef1d-4056-b800-114d276d6cf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes &amp; Libraries\CSocketServer\Documents">
+      <UniqueIdentifier>{647f52ef-4d70-4be1-9568-348994846ca0}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SockServer.Cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Accept.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_ClassProperties.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_ClientProperties.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_ClientThread.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Command.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Connect.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Events.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Initialize.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Internal.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Locks.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Memory.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Packetize.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_PumpThread.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Receive.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Send.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_StartStop.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Utilities.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_WSAInterface.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\CSocketServer.H">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Event Handlers.txt">
+      <Filter>Classes &amp; Libraries\CSocketServer\Documents</Filter>
+    </None>
+  </ItemGroup>
+</Project>

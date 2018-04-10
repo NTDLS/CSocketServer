@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{cbc65bcd-2cf0-4017-bd3c-b37c53a0775e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes &amp; Libraries">
+      <UniqueIdentifier>{7fb13c04-c420-43ee-a700-afdb1721131c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes &amp; Libraries\CSocketServer">
+      <UniqueIdentifier>{e21ffc60-a8fc-43b0-acc5-1fc2dc33b2ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes &amp; Libraries\CSocketServer\Documents">
+      <UniqueIdentifier>{80320e6b-8943-4c42-bf4b-6b1b041fae96}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Server.Cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Accept.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_ClassProperties.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_ClientProperties.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_ClientThread.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Command.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Connect.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Events.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Initialize.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Internal.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Locks.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Memory.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Packetize.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_PumpThread.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Receive.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Send.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_StartStop.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_Utilities.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CSocketServer_WSAInterface.Cpp">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\CSocketServer.H">
+      <Filter>Classes &amp; Libraries\CSocketServer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Event Handlers.txt">
+      <Filter>Classes &amp; Libraries\CSocketServer\Documents</Filter>
+    </None>
+  </ItemGroup>
+</Project>
