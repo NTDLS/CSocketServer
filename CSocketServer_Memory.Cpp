@@ -25,8 +25,10 @@
 #include "CSocketServer.H"
 
 #ifdef _USE_GLOBAL_MEMPOOL
-#include "../CMemPool/CMemPool.H"
-extern CMemPool *pMem; //pMem must be defined and initalized elsewhere.
+#include "../NSWFL/NSWFL.h"
+using namespace NSWFL::Memory;
+extern MemoryPool *pMem; //pMem must be defined and initalized elsewhere.
+
 #endif
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -24,7 +24,7 @@
 #include <Time.H>
 
 #include "CSocketServer.H"
-#include "../../@Libraries/NSWFL/NSWFL.h"
+#include "../NSWFL/NSWFL.h"
 
 using namespace NSWFL::String;
 
