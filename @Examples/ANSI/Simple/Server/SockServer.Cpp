@@ -13,9 +13,9 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void OnError(CSocketServer *lpCSocketServer, CSocketClient *pClient, int iErrorNumber, const char *sErrorMsg)
+void OnError(CSocketServer* lpCSocketServer, CSocketClient* pClient, int iErrorNumber, const char* sErrorMsg)
 {
-	if(pClient)
+	if (pClient)
 	{
 		printf("Error: %d, Client: %d, Msg: %s\n", iErrorNumber, pClient->PeerID(), sErrorMsg);
 	}
@@ -26,7 +26,7 @@ void OnError(CSocketServer *lpCSocketServer, CSocketClient *pClient, int iErrorN
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
 	/*
 		All of this could be handled a bit more efficiently by using threads (which are built in to the class).
@@ -34,13 +34,13 @@ int main(int argc, char *argv[])
 			Otherwise, the following will work just fine.
 	*/
 
-	int iPort = 8485;
-	int iMaxClients = 10;
+	const int iPort = 8485;
+	const int iMaxClients = 10;
 
 	CSocketServer Sock;
-	
+
 	printf("Initializing the Server.\n");
-	if(!Sock.Initialize(iPort, iMaxClients, &OnError))
+	if (!Sock.Initialize(iPort, iMaxClients, &OnError))
 	{
 		return 0;
 	}
@@ -53,28 +53,23 @@ int main(int argc, char *argv[])
 	//You can also use Sock.PacketMode(iClient, true or false); to enable/disable packetting for a single connection.
 	//	this can be done at any time while the socket is connected (switch back and forth as you like depending on requirements).
 
-	if(Sock.Start())
+	if (Sock.Start())
 	{
 		//Just keep running.
-		while(Sock.IsActive())
+		while (Sock.IsActive())
 		{
 			//Loop through every possible client "slot".
-			for(int iClient = 0; iClient < Sock.MaxConnections(); iClient++)
+			for (int iClient = 0; iClient < Sock.MaxConnections(); iClient++)
 			{
-				if(Sock.Client(iClient)->IsConnected()) //Is the client connected?
+				if (Sock.Client(iClient)->IsConnected()) //Is the client connected?
 				{
-					if(Sock.Client(iClient)->GetClientData(&Chunk)) //Get any pending data.
+					if (Sock.Client(iClient)->GetClientData(&Chunk)) //Get any pending data.
 					{
-						printf("Received %d bytes from client %d\n", Chunk.iLength, iClient);
-						for(int iByte = 0; iByte < Chunk.iLength; iByte++)
-						{
-							printf("0x%x,", ((BYTE*)Chunk.pBuffer)[iByte]);
-						}
-						printf("\n");
+						printf("Received (%d bytes) \"%s\" from client %d\n", Chunk.iLength, (char*)Chunk.pBuffer, iClient);
 					}
 				}
 			}
-			
+
 			Sleep(1);
 		}
 	}

@@ -25,10 +25,6 @@
 
 #include "CSocketServer.H"
 
-#include "../NSWFL/NSWFL.h"
-
-using namespace NSWFL::String;
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 	This function sets up a socket to listen for incomming connections.

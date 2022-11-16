@@ -24,9 +24,6 @@
 #include <Process.H>
 
 #include "CSocketServer.H"
-#include "../NSWFL/NSWFL.h"
-
-using namespace NSWFL::String;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -342,7 +339,7 @@ unsigned __stdcall p_TcpPumpThreadProc(void *pData)
 #else
 	char sEventName[255];
 	//sprintf_s(sEventName, sizeof(sEventName), "PumpCycled->%d->%d", GetTickCount(), rand());
-	NewGUID(sEventName, sizeof(sEventName));
+	pSock->NewGUID(sEventName, sizeof(sEventName));
 #endif
 	pSock->p_PumpCycledEvent = CreateEvent(NULL, FALSE, FALSE, sEventName);
 
@@ -351,7 +348,7 @@ unsigned __stdcall p_TcpPumpThreadProc(void *pData)
 		L"PumpCycle->%d->%d", GetTickCount(), rand());
 #else
 	//sprintf_s(sEventName, sizeof(sEventName), "CyclePump->%d->%d", GetTickCount(), rand());
-	NewGUID(sEventName, sizeof(sEventName));
+	pSock->NewGUID(sEventName, sizeof(sEventName));
 #endif
 
 	_endthreadex(pSock->p_TCPPump());

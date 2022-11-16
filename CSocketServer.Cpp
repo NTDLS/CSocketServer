@@ -24,13 +24,6 @@
 
 #include "CSocketServer.H"
 
-#ifdef _USE_GLOBAL_MEMPOOL
-#include "../NSWFL/NSWFL.h"
-using namespace NSWFL::Memory;
-extern MemoryPool *pMem; //pMem must be defined and initalized elsewhere.
-
-#endif
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #ifdef UNICODE

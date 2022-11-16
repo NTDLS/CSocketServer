@@ -304,6 +304,10 @@ public: //General public functions.
 	bool GetConnectedClient(int *iSlot);
 	CSocketClient *GetConnectedClient(void);
 
+	int Bin2Hex(void* lpTarget, int iMaxSz, const void* lpSrc, int iSz, int iBytes, bool bPrefix);
+	int Bin2Hex(void* lpTarget, int iMaxSz, const void* lpSrc, int iSz, int iBytes);
+	bool NewGUID(char* sOut, int iMaxOutSz);
+
 #ifdef UNICODE
 	bool IsIPAddress(const WCHAR *sString);
 	bool ResolveHost(const WCHAR *sHostName, WCHAR *sOutIP, int iMaxOutSz);

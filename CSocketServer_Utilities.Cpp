@@ -18,6 +18,7 @@
 
 #include <WinSock2.H>
 #include <WinSock.H>
+#include <Objbase.h>
 #include <Windows.H>
 #include <Stdio.H>
 #include <Stdlib.H>
@@ -125,6 +126,68 @@ bool CSocketServer::IsIPAddress(const char *sString)
 	}
 
 	return iDotCount == 3;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#ifdef UNICODE
+bool CSocketServer::NewGUID(WCHAR* sOut, int iMaxOutSz)
+#else
+bool CSocketServer::NewGUID(char* sOut, int iMaxOutSz)
+#endif
+{
+	GUID lGUID;
+	memset(&lGUID, 0, sizeof(GUID));
+	if (CoCreateGuid(&lGUID) == S_OK)
+	{
+		if (Bin2Hex(sOut, iMaxOutSz, &lGUID, sizeof(GUID), 2, false) == 32)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int CSocketServer::Bin2Hex(void* lpTarget, int iMaxSz, const void* lpSrc, int iSz, int iBytes, bool bPrefix)
+{
+	int iWPos = 0;
+	int iRPos = 0;
+	int iByte = 0;
+
+	if (iBytes < 1)
+	{
+		return 0;
+	}
+
+	if (bPrefix)
+	{
+		((char*)lpTarget)[iWPos++] = '0';
+		((char*)lpTarget)[iWPos++] = 'x';
+	}
+
+	while (iRPos < iSz)
+	{
+		iByte = (iBytes - 1);
+
+		while (iByte >= 0)
+		{
+			((char*)lpTarget)[iWPos++] = "0123456789ABCDEF"[((((char*)lpSrc)[iRPos] >> (iByte--) * 4) & 0xF)];
+		}
+		iRPos++;
+	}
+
+	((char*)lpTarget)[iWPos] = '\0';
+
+	return iWPos;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int CSocketServer::Bin2Hex(void* lpTarget, int iMaxSz, const void* lpSrc, int iSz, int iBytes)
+{
+	return Bin2Hex(lpTarget, iMaxSz, lpSrc, iSz, iBytes, true);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

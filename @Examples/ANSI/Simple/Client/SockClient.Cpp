@@ -13,9 +13,9 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void OnError(CSocketServer *lpCSocketServer, CSocketClient *pClient, int iErrorNumber, const char *sErrorMsg)
+void OnError(CSocketServer* lpCSocketServer, CSocketClient* pClient, int iErrorNumber, const char* sErrorMsg)
 {
-	if(pClient)
+	if (pClient)
 	{
 		printf("Error: %d, Client: %d, Msg: %s\n", iErrorNumber, pClient->PeerID(), sErrorMsg);
 	}
@@ -26,47 +26,45 @@ void OnError(CSocketServer *lpCSocketServer, CSocketClient *pClient, int iErrorN
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-	int iPort = 8485;
-	int iMaxClients = 0;
+	const int iPort = 8485;
+	const int iMaxClients = 0;
 	CSocketServer Sock;
 
 	printf("Initializing the Client.\n");
-	if(!Sock.Initialize(&OnError))
+	if (!Sock.Initialize(&OnError))
 	{
 		return 0;
 	}
 
 	//Sock.PacketMode(false);
 
-	if(Sock.Start())
+	if (Sock.Start())
 	{
-		CSocketClient *pClient = NULL;
+		CSocketClient* pClient = NULL;
 
 		printf("Connecting.\n");
-		if(Sock.Connect("127.0.0.1", iPort, &pClient))
+		if (Sock.Connect("127.0.0.1", iPort, &pClient))
 		{
 			printf("Connected.\n");
 
-			char sMessage[100] = {0x00, 0x01, 0x02};
 
-			//Just keep running.
-			while(pClient->IsConnected())
+			while (pClient->IsConnected()) //Just keep running.
 			{
-				printf("Sending %d bytes.\n", sizeof(char) * 3);
-				pClient->SetNextSendData(sMessage, sizeof(char) * 3);
-				Sleep(1000);
+				printf("Sending data to server...\n");
+				pClient->SetNextSendData("Hello World!");
+				Sleep(100);
 			}
 			printf("Disconnected.\n");
 		}
-		else{
+		else {
 			printf("Failed to connect.\n");
 		}
 	}
 
 	Sock.Destroy();
-	
+
 	return 0;
 }
 
